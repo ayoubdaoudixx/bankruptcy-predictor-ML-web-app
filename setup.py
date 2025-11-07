@@ -24,6 +24,6 @@ version='0.0.1',
 author='Ayoub',
 author_email='ayoubdaoudi2001@gmail.com',
 packages=find_packages(),
-install_requires=get_requirements('requiremenrts.txt')
+install_requires=get_requirements('requirements.txt')
 
 )
