@@ -66,23 +66,28 @@
                         data-bs-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <div class="navbar-nav ms-auto">
-                            <a href="{{ url_for('index') }}" class="nav-item nav-link active">Home</a>
-                            <a href="{{ url_for('index') }}" class="nav-item nav-link">About Us</a>
-                            <a href="{{ url_for('index') }}" class="nav-item nav-link">Our App</a>
-                            <a href="{{ url_for('index') }}" class="nav-item nav-link">FAQs</a>
-                            <a href=https://www.linkedin.com/in/ayoub-daoudi-7735a9228/"
-                            target="_blank" class="nav-item nav-link">Contact</a>
-                        </div>
+
+                </a>
+                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="{{ url_for('index') }}" class="nav-item nav-link active">Home</a>
+                        <a href="{{ url_for('index') }}" class="nav-item nav-link">About Us</a>
+                        <a href="{{ url_for('index') }}" class="nav-item nav-link">Our App</a>
+                        <a href="{{ url_for('index') }}" class="nav-item nav-link">FAQs</a>
+                        <a href="{{ url_for('contact') }}" class="nav-item nav-link">Contact</a>
                     </div>
-                </nav>
-            </div>
+                </div>
+            </nav>
         </div>
-        <!-- Navbar End -->
+    </div>
+    <!-- Navbar End -->
 
 
-     <!-- Hero Start -->
+    <!-- Hero Start -->
     <div class="container-fluid pt-5 bg-blue-500 hero-header mb-5">
         <div class="container pt-5">
             <div class="row g-5 pt-5">
@@ -97,8 +102,7 @@
                     <p class="text-white mb-4 animated slideInRight" style="margin-left: 50px;">5. Explore options for refinancing or consolidating high-interest loans</p>
 
                     <a href="{{ url_for('predictdata') }}" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInRight">Try Again/a>
-                    <a href="https://www.linkedin.com/in/ayoub-daoudi-7735a9228/"
-                            target="_blank" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact Us</a>
+                    <a href="{{ url_for('contact') }}" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact Us</a>
                 </div>
                 <div class="col-lg-6 align-self-end text-center text-lg-end">
                     <img class="img-fluid" src="{{ url_for('static', filename='img/predictTrue.png')}}" alt="">
@@ -150,7 +154,7 @@
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
                     <h5 class="text-white mb-4">Popular Link</h5>
                     <a class="btn btn-link" href="about">About Us</a>
-                    <a class="btn btn-link" href="https://www.linkedin.com/in/ayoub-daoudi-7735a9228/" target="_blank">Contact Us</a>
+                    <a class="btn btn-link" href="{{ url_for('contact') }}">Contact Us</a>
                 </div>
 
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">

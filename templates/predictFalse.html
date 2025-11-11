@@ -72,14 +72,13 @@
                             <a href="{{ url_for('index') }}" class="nav-item nav-link">About Us</a>
                             <a href="{{ url_for('index') }}" class="nav-item nav-link">Our App</a>
                             <a href="{{ url_for('index') }}" class="nav-item nav-link">FAQs</a>
-                            <a href="https://www.linkedin.com/in/ayoub-daoudi-7735a9228/"
-                            target="_blank" class="nav-item nav-link">Contact</a>
+                            <a href="{{ url_for('contact') }}" class="nav-item nav-link">Contact</a>
                         </div>
                     </div>
                 </nav>
             </div>
         </div>
-        <!-- Navbar End -->
+    <!-- Navbar End -->
 
 
     <!-- Hero Start -->
@@ -87,19 +86,27 @@
         <div class="container pt-5">
             <div class="row g-5 pt-5">
                 <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
-                    <h1 class="display-4 text-white mb-4 animated slideInRight">Your company is <span style="color: rgb(84, 227, 84);"> NOT At Risk</span> of going Bankruptcy</h1>
-                    <h5 class="text-white mb-4 animated slideInRight">These instructions can help you maintain your financial health and ensure the continued success of your business:</h5>
+                    <h1 class="display-4 text-white mb-4 animated slideInRight">Your company is <span
+                            style="color: rgb(84, 227, 84);"> NOT At Risk</span> of going Bankruptcy</h1>
+                    <h5 class="text-white mb-4 animated slideInRight">These instructions can help you maintain your
+                        financial health and ensure the continued success of your business:</h5>
 
-                    <p class="text-white mb-4 animated slideInRight" style="margin-left: 50px;">1. Continuously monitor your financial health to catch issues early</p>
-                    <p class="text-white mb-4 animated slideInRight" style="margin-left: 50px;">2. Build and maintain cash reserves as a financial safety net</p>
-                    <p class="text-white mb-4 animated slideInRight" style="margin-left: 50px;">3. Use financial forecasting to predict future cash flows and challenges.</p>
-                    <p class="text-white mb-4 animated slideInRight" style="margin-left: 50px;">4. Stay informed about market trends, customer preferences, and competitors</p>
-                    <p class="text-white mb-4 animated slideInRight" style="margin-left: 50px;">5. Create an emergency plan for unexpected disruptions.</p>
+                    <p class="text-white mb-4 animated slideInRight" style="margin-left: 50px;">1. Continuously monitor
+                        your financial health to catch issues early</p>
+                    <p class="text-white mb-4 animated slideInRight" style="margin-left: 50px;">2. Build and maintain
+                        cash reserves as a financial safety net</p>
+                    <p class="text-white mb-4 animated slideInRight" style="margin-left: 50px;">3. Use financial
+                        forecasting to predict future cash flows and challenges.</p>
+                    <p class="text-white mb-4 animated slideInRight" style="margin-left: 50px;">4. Stay informed about
+                        market trends, customer preferences, and competitors</p>
+                    <p class="text-white mb-4 animated slideInRight" style="margin-left: 50px;">5. Create an emergency
+                        plan for unexpected disruptions.</p>
 
 
-                    <a href="{{ url_for('predictdata') }}" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInRight">Try Again</a>
-                    <a href="https://www.linkedin.com/in/ayoub-daoudi-7735a9228/"
-                            target="_blank" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact Us</a>
+                    <a href="{{ url_for('predictdata') }}" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInRight">Try
+                        Again</a>
+                    <a href="{{ url_for('contact') }}" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact
+                        Us</a>
                 </div>
                 <div class="col-lg-6 align-self-end text-center text-lg-end">
                     <img class="img-fluid" src="{{ url_for('static', filename='img/predictFalse.png')}}" alt="">
@@ -137,7 +144,8 @@
             <div class="row g-5">
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
                     <a href="{{ url_for('index') }}" class="d-inline-block mb-3">
-                        <img src="{{ url_for('static', filename='img/logowhite.png')}}" alt="Logo" class="w-[6rem] h-1 mr-2 object-cover" style="
+                        <img src="{{ url_for('static', filename='img/logowhite.png')}}" alt="Logo"
+                            class="w-[6rem] h-1 mr-2 object-cover" style="
                             width: 15rem;
                             margin-top: -3rem;">
                     </a>
@@ -151,14 +159,15 @@
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
                     <h5 class="text-white mb-4">Popular Link</h5>
                     <a class="btn btn-link" href="{{ url_for('index') }}">About Us</a>
-                    <a class="btn btn-link" href="https://www.linkedin.com/in/ayoub-daoudi-7735a9228/"
-                            target="_blank">Contact Us</a>
+                    <a class="btn btn-link" href="{{ url_for('contact') }}">Contact Us</a>
                 </div>
 
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
                     <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href="https://twitter.com/AyoubDa11323718" target="_blank"><i
-                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://twitter.com/AyoubDa11323718"
+                            target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/ayoubdaoudi20/"
+                            target="_blank"><i class="fab fa-instagram"></i></a>
                         <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/ayoubdaoudi20/" target="_blank"><i
                                 class="fab fa-instagram"></i></a>
                         <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/in/ayoub-daoudi-7735a9228/"

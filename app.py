@@ -1,6 +1,10 @@
 import logging
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from datetime import datetime
 
-from flask import Flask,request,render_template
+from flask import Flask,request,render_template,redirect,url_for
 import numpy as np
 import pandas as pd
 
@@ -16,6 +20,73 @@ app=application
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+    if request.method == 'POST':
+        try:
+            # Get form data
+            name = request.form.get('name')
+            email = request.form.get('email')
+            subject = request.form.get('subject')
+            message = request.form.get('message')
+            
+            # Create email content
+            email_subject = f"Contact Form: {subject}"
+            email_body = f"""
+New Contact Form Submission from Bankruptcy Predictor
+
+From: {name}
+Email: {email}
+Subject: {subject}
+
+Message:
+{message}
+
+---
+Sent from Bankruptcy Predictor Web App
+Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+            """
+            
+            # Create MIME message
+            msg = MIMEMultipart()
+            msg['From'] = 'bankruptcypredictor@noreply.com'
+            msg['To'] = 'ayoubdaoudi2001@gmail.com'
+            msg['Subject'] = email_subject
+            msg['Reply-To'] = email
+            
+            msg.attach(MIMEText(email_body, 'plain'))
+            
+            try:
+                # Try to send email using SMTP
+                # For Gmail, you need to:
+                # 1. Enable 2-factor authentication
+                # 2. Generate an App Password
+                # 3. Use the App Password instead of your regular password
+                
+                # Uncomment and configure these lines when you have SMTP credentials
+                # smtp_server = smtplib.SMTP('smtp.gmail.com', 587)
+                # smtp_server.starttls()
+                # smtp_server.login('your-email@gmail.com', 'your-app-password')
+                # smtp_server.send_message(msg)
+                # smtp_server.quit()
+                
+                # For now, log the message (email will not actually be sent)
+                logging.info(f"Contact form submission from {name} ({email})")
+                logging.info(f"Subject: {subject}")
+                logging.info(f"Message: {message}")
+                logging.info("Note: Email not sent. Configure SMTP settings in app.py to enable email sending.")
+                
+                return render_template('contact.html', success=True)
+            except Exception as smtp_error:
+                logging.error(f"SMTP Error: {smtp_error}")
+                return render_template('contact.html', error="Failed to send email. Please try again later.")
+                
+        except Exception as e:
+            logging.error(f"Contact form error: {e}")
+            return render_template('contact.html', error="An error occurred. Please try again.")
+    
+    return render_template('contact.html')
 
 @app.route('/predictdata',methods=['GET','POST'])
 def predictdata():
