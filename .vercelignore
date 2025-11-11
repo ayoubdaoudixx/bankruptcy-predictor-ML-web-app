@@ -1,4 +1,4 @@
-# Ignore Python cache and virtual environment
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
@@ -10,37 +10,54 @@ ENV/
 .env
 .venv
 
-# Ignore development files
+# Development
 .vscode/
 .idea/
 *.iml
 *.sublime-workspace
 *.sublime-project
 
-# Ignore Jupyter notebooks
+# Jupyter
 *.ipynb
+.ipynb_checkpoints
+notebooks/
+notebook/
 
-# Ignore large data files
+# Data files
 *.csv
 *.pkl
 *.h5
 *.hdf5
 *.model
 *.pth
+*.joblib
 
-# Ignore local development files
+# Logs and databases
 *.log
+*.sqlite
+*.db
+
+# OS generated files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
 
-# Ignore training scripts and notebooks
-notebooks/
-notebook/
+# Project specific
+artifacts/data.csv
+artifacts/test.csv
+artifacts/train.csv
+*.md
+.git
+.gitignore
 
-# Keep only necessary files for production
+# Include necessary files
 !app.py
 !templates/**
 !static/**
 !vercel.json
 !vercel-requirements.txt
+!runtime.txt
 !artifacts/model.pkl
 !artifacts/preprocessor.pkl

@@ -3,7 +3,11 @@
   "builds": [
     {
       "src": "app.py",
-      "use": "@vercel/python"
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "15mb",
+        "runtime": "python3.9"
+      }
     },
     {
       "src": "static/",
@@ -15,5 +19,13 @@
       "src": "/(.*)",
       "dest": "/app.py"
     }
-  ]
+  ],
+  "env": {
+    "PYTHONUNBUFFERED": "1"
+  },
+  "build": {
+    "env": {
+      "PIP_CACHE_DIR": "/tmp/.pip-cache"
+    }
+  }
 }
