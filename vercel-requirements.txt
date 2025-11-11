@@ -1,10 +1,10 @@
 Flask==2.3.3
-Werkzeug==2.3.7
-Jinja2==3.1.2
-itsdangerous==2.1.2
-click==8.1.7
 numpy==1.26.0
-scikit-learn==1.3.1
 pandas==2.1.1
+scikit-learn==1.3.1
 joblib==1.3.2
-gunicorn==21.2.0
+itsdangerous==2.1.2
+Jinja2==3.1.2
+MarkupSafe==2.1.3
+Werkzeug==2.3.7
+# Add only the lightweight libs your app needs at request time.

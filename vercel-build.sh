@@ -1,11 +1,17 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
 
-# Install Python dependencies
-echo "Installing Python dependencies..."
-pip install -r vercel-requirements.txt --target ./python
+echo "Upgrading pip, setuptools and wheel..."
+python -m pip install --upgrade pip setuptools wheel
 
-# Make sure the artifacts directory exists
+echo "Installing only minimal runtime dependencies for Vercel..."
+# Install minimal runtime deps into ./python so Vercel includes them in the serverless function
+python -m pip install --no-cache-dir --upgrade -r vercel-requirements.txt --target ./python
+
+# Ensure artifacts folder exists (if your app needs it)
 mkdir -p artifacts
 
-# Make the script executable
+# Make this script executable (safe to run idempotently)
 chmod +x vercel-build.sh
+
+echo "Build script finished."
